@@ -18,7 +18,6 @@ const ColorList = ({ colors, updateColors }) => {
   };
 
   const saveEdit = e => {
-    // e.preventDefault();
     axiosWithAuth()
       .put(`/colors/${colorToEdit.id}`, colorToEdit)
       .then(res => {
@@ -30,8 +29,11 @@ const ColorList = ({ colors, updateColors }) => {
 
   const deleteColor = color => {
     axiosWithAuth()
-      .delete(`/colors/${colorToEdit.id}`)
-      .then(res => console.log(res))
+      .delete(`/colors/${color.id}`)
+      .then(res => {
+        console.log('Delete response: ', res);
+        window.location.reload();
+      })
       .catch(err => console.log(err));
   };
 
