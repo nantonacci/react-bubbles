@@ -12,7 +12,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <Route exact path="/" component={Login} /> */}
         <Switch>
           <PrivateRoute exact path="/bubblepage" component={BubblePage} />
           <Route exact path="/" component={Login} />
